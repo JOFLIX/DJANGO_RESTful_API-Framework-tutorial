@@ -85,7 +85,7 @@ Notice that we're using hyperlinked relations in this case with HyperlinkedModel
 # Views
 
 Right, we'd better write some views then. Open tutorial/quickstart/views.py and get typing.
-
+```
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
@@ -105,14 +105,14 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-
+```
 Rather than write multiple views we're grouping together all the common behavior into classes called ViewSets.
 
 We can easily break these down into individual views if we need to, but using viewsets keeps the view logic nicely organized as well as being very concise.
 URLs
 
 Okay, now let's wire up the API URLs. On to tutorial/urls.py...
-
+```
 from django.urls import include, path
 from rest_framework import routers
 from tutorial.quickstart import views
@@ -127,7 +127,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
-
+```
 Because we're using viewsets instead of views, we can automatically generate the URL conf for our API, by simply registering the viewsets with a router class.
 
 Again, if we need more control over the API URLs we can simply drop down to using regular class-based views, and writing the URL conf explicitly.
