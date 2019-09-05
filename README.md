@@ -1,4 +1,4 @@
-
+<div style="background-color:green">
 # Quickstart RESTFUL_API_WITH_LOGIN_AND_LOGOUT
 
 # BY: JOFLIX OOKO
@@ -231,3 +231,4 @@ If you want to get a more in depth understanding of how REST framework fits toge
 ***Adopted by Joflix. 2019***
 <br>
 Documentation built with MkDocs.
+</div>
